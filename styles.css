@@ -1,0 +1,258 @@
+:root {
+  --bg: #ffffff;
+  --muted: #6b6b6b;
+  --accent: #2f9d74;
+  --heading: #111;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: var(--heading);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Load local display fonts if available. Place .woff2 files in `fonts/` folder. */
+@font-face {
+  font-family: "Bely Display";
+  src: url("fonts/BelyDisplay-Regular.woff2") format("woff2"),
+    url("fonts/BelyDisplay-Regular.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Futura Round Demi";
+  src: url("fonts/FuturaRoundDemi.woff2") format("woff2"),
+    url("fonts/FuturaRoundDemi.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.site-header {
+  padding: 28px 0;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.brand {
+  font-weight: 700;
+  font-family: "Futura Round Demi", "Inter", system-ui, -apple-system,
+    "Segoe UI", Roboto;
+}
+.main-nav {
+  margin-left: 24px;
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+.main-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+.btn-ghost {
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+.hamburger {
+  width: 22px;
+  height: 2px;
+  background: var(--heading);
+  display: block;
+  position: relative;
+}
+.hamburger:before,
+.hamburger:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--heading);
+  display: block;
+}
+.hamburger:before {
+  top: -7px;
+}
+.hamburger:after {
+  top: 7px;
+}
+
+.hero {
+  padding: 40px 0 80px;
+  position: relative;
+}
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.hero-left {
+  flex: 1;
+  max-width: 560px;
+}
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Bely Display", "Playfair Display", Georgia, serif;
+  font-size: 56px;
+  line-height: 1.02;
+  margin: 0 0 20px;
+}
+.lead {
+  color: var(--muted);
+  font-size: 18px;
+  margin: 0 0 28px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-illustration {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #f7f7f7, #fff);
+  display: block;
+}
+
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+}
+.mouse {
+  width: 28px;
+  height: 42px;
+  border-radius: 16px;
+  border: 2px solid var(--muted);
+  display: flex;
+  justify-content: center;
+}
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--muted);
+  border-radius: 2px;
+  margin-top: 6px;
+  animation: scroll 1.6s infinite;
+}
+.scroll-text {
+  font-size: 12px;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  h1 {
+    font-family: "Bely Display", "Playfair Display", Georgia, serif;
+    font-size: 40px;
+  }
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    padding: 12px 24px;
+    flex-direction: column;
+    gap: 12px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .main-nav.open {
+    display: flex;
+  }
+  .mobile-toggle {
+    display: block;
+    margin-left: 12px;
+  }
+  .brand {
+    flex: 1;
+  }
+  .hero-right {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-family: "Bely Display", "Playfair Display", Georgia, serif;
+    font-size: 28px;
+  }
+  .lead {
+    font-size: 15px;
+  }
+  .container {
+    padding: 0 16px;
+  }
+}

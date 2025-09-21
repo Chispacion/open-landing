@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open Enterprise — Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load Inter from Google for body / UI. Custom display fonts (Bely Display and Futura Round Demi)
+      should be added to `landing-pages/fonts/` as .woff2/.woff files. Example filenames:
+      - fonts/BelyDisplay-Regular.woff2
+      - fonts/FuturaRoundDemi.woff2
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+        <div class="container header-inner">
+        <div class="brand">Open Enterprise</div>
+        <button class="mobile-toggle" aria-expanded="false" aria-label="Abrir menú">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <a href="#">Why Open Enterprise</a>
+          <a href="#">Features</a>
+          <a href="#">Contribute</a>
+        </nav>
+        <a class="btn-ghost" href="#">Request early access</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-left">
+            <h1>A new model for open collaboration</h1>
+            <p class="lead">Run an organization where members get rewarded for their contributions with fractional ownership.</p>
+            <a class="btn-primary" href="#">Request early access</a>
+          </div>
+          <div class="hero-right">
+            <!-- Usar la imagen principal en la carpeta images -->
+            <img src="images/Right%20Column.svg" alt="Ilustración principal" class="hero-illustration" />
+          </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+          <div class="scroll-text">Scroll down</div>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+      (function(){
+        const btn = document.querySelector('.mobile-toggle');
+        const nav = document.getElementById('mainNav');
+        btn && btn.addEventListener('click', function(){
+          const open = nav.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open);
+        });
+      })();
+    </script>
+
+  </body>
+</html>
