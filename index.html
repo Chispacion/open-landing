@@ -54,16 +54,40 @@
 
     </main>
 
-    <script>
-      (function(){
-        const btn = document.querySelector('.mobile-toggle');
-        const nav = document.getElementById('mainNav');
-        btn && btn.addEventListener('click', function(){
-          const open = nav.classList.toggle('open');
-          btn.setAttribute('aria-expanded', open);
-        });
-      })();
-    </script>
+    <section class="features">
+      <div class="container">
+        <h2 class="features-title">Reimagining what it means to work</h2>
+        <p class="features-lead">Teams and communities using Open Enterprise fundamentally unlock a reality of work that reimagines how people engage in economic opportunity, meeting the demands and expectations of a modern organization.</p>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img src="images/Icon1.svg" alt="Icono Modern workforce" />
+            </div>
+            <h3>Modern workforce</h3>
+            <p class="muted">Multistakeholder governance aligns employees with the organization's wider community.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img src="images/Icon.svg" alt="Icono Meritocratic by design" />
+            </div>
+            <h3>Meritocratic by design</h3>
+            <p class="muted">Tokenized ownership aligns deeply committed individuals with the organization's success.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img src="images/Icon2.svg" alt="Icono Engineered for resilience" />
+            </div>
+            <h3>Engineered for resilience</h3>
+            <p class="muted">Open Enterprise supports best practices in sociocratic management.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
 
   </body>
 </html>
